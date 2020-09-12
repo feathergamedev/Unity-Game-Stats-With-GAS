@@ -60,7 +60,7 @@
 
     ● 設定 Who can access to the app : Anyone, even anonymous
 
-![](https://i.imgur.com/RFF5frB.png)
+![](https://i.imgur.com/4wXNF0T.png)
 
 
 7. 把 Current web app URL 複製起來 (等等會用到)
