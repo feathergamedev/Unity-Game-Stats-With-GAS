@@ -1,5 +1,7 @@
 # Unity-Game-Stats-With-GAS
 
+[DEMO Video](https://youtu.be/Nl4VP78Qrmo)
+
 ## 介紹
 `Unity Game Stats With GAS` 是專為 Unity Engine 開發的小工具，結合 GAS(Google Apps Script)，用 Google 雲端試算表打造簡易的數據統計資料庫。
 
@@ -71,7 +73,7 @@
 ![](https://i.imgur.com/4g2offe.png)
 
 ## DEMO場景
-![](https://i.imgur.com/ptenytY.png)
+![](https://i.imgur.com/bW8cgNB.gif)
 
 
 所有核心功能的 Function 都可使用 `Action<string>` 接收來自 GAS 的回傳字串。
