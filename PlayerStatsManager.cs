@@ -9,7 +9,7 @@ public class PlayerStatsManager : MonoBehaviour
     public static PlayerStatsManager instance;
 
     // TODO: Replace this with your {Current web app URL} from GAS
-    private static readonly string GAS_URL = "USE_YOUR_CurrentWebAppURL_FROM_GAS";
+    private static readonly string GAS_URL = "YOUR_CURRENT_WEB_APP_URL";
 
     public static PlayerStatsManager Instance
     {
@@ -29,6 +29,7 @@ public class PlayerStatsManager : MonoBehaviour
     public enum PostMethod
     {
         GainNewVisitor,
+        GainNewFinisher,
         AddNewScore,
         GetScoreByRank,
         GetScoreOfTopN,
@@ -56,6 +57,11 @@ public class PlayerStatsManager : MonoBehaviour
     public void GainNewVisitor(Action<string> onComplete = null)
     {
         StartCoroutine(ConnectToGAS(PostMethod.GainNewVisitor, onComplete));
+    }
+
+    public void GainNewFinisher(Action<string> onComplete = null)
+    {
+        StartCoroutine(ConnectToGAS(PostMethod.GainNewFinisher, onComplete));
     }
 
     public void AddNewScore(int myScore, Action<string> onComplete = null)
@@ -117,3 +123,4 @@ public class PlayerStatsManager : MonoBehaviour
         }
     }
 }
+

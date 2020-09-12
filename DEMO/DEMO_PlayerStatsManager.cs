@@ -28,6 +28,7 @@ public class DEMO_PlayerStatsManager : MonoBehaviour
     public enum PostMethod
     {
         GainNewVisitor,
+        GainNewFinisher,
         AddNewScore,
         GetScoreByRank,
         GetScoreOfTopN,
@@ -56,7 +57,12 @@ public class DEMO_PlayerStatsManager : MonoBehaviour
     {
         StartCoroutine(ConnectToGAS(PostMethod.GainNewVisitor, onComplete));
     }
-    
+
+    public void GainNewFinisher(Action<string> onComplete = null)
+    {
+        StartCoroutine(ConnectToGAS(PostMethod.GainNewFinisher, onComplete));
+    }
+
     public void AddNewScore(int myScore, Action<string> onComplete = null)
     {
         FieldData scoreField;

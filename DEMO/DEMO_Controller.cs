@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DEMO_StatsController : MonoBehaviour
+public class DEMO_Controller : MonoBehaviour
 {
 
     [SerializeField]
     private Text m_visitorCountText;
+
+    [SerializeField]
+    private Text m_finisherCountText;
 
 
 
@@ -28,7 +31,7 @@ public class DEMO_StatsController : MonoBehaviour
 
 
     [SerializeField]
-    private Text m_leaderBoardText;
+    private Text m_leaderboardText;
 
     // Start is called before the first frame update
     void Start()
@@ -48,6 +51,19 @@ public class DEMO_StatsController : MonoBehaviour
     private void ShowVisitorCount(string visitorNum)
     {
         m_visitorCountText.text = string.Format("你是第 {0} 位使用者！", visitorNum);
+    }
+
+    public void GainNewFinisher()
+    {
+        DEMO_PlayerStatsManager.Instance.GainNewFinisher((x) =>
+        {
+            ShowFinisherCount(x);
+        });
+    }
+
+    private void ShowFinisherCount(string finisherNum)
+    {
+        m_finisherCountText.text = string.Format("你是第 {0} 位通關者！", finisherNum);
     }
 
     public void SendScoreToLeaderboard()
@@ -92,22 +108,23 @@ public class DEMO_StatsController : MonoBehaviour
     {
         DEMO_PlayerStatsManager.Instance.GetScoreOfTopN(10, (x) =>
         {
-            RefreshLeaderBoard(x);
+            RefreshLeaderboard(x);
         });
     }
 
-    private void RefreshLeaderBoard(string str)
+    private void RefreshLeaderboard(string str)
     {
         var data = str.Split(',');
 
-        m_leaderBoardText.text = "";
+        m_leaderboardText.text = "";
 
         for (int i = 0; i < 10; i++)
         {
-            m_leaderBoardText.text += string.Format("No.{0} : {1}\n", i + 1, data[i]);
+            m_leaderboardText.text += string.Format("No.{0} : {1}\n", i + 1, data[i]);
         }
     }
 
+    // Should only be used inside the engine.
     public void OpenSourceSpreadsheet()
     {
         Application.OpenURL("https://docs.google.com/spreadsheets/d/13cJe2iY1ZHyHjrYoayrAQ85KvbhapfnAS_RvOmu5ll4/edit?usp=sharing");
