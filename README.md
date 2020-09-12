@@ -58,12 +58,12 @@
 
     ● 設定 Who can access to the app : Anyone, even anonymous
 
-![](https://i.imgur.com/F05iEHy.png)
+![](https://i.imgur.com/RFF5frB.png)
 
 
 7. 把 Current web app URL 複製起來 (等等會用到)
 
-![](https://i.imgur.com/udcTwo6.png)
+![](https://i.imgur.com/g1dr1LI.png)
 
 8. 把 `PlayerStatsManager.cs` 以及 `Demo資料夾` 放到 Unity 專案的 Asset 資料夾內
 
