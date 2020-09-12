@@ -1,4 +1,4 @@
-# Unity-Game-Stats-With-GAS
+# Unity Game Stats With GAS
 
 [DEMO Video](https://youtu.be/Nl4VP78Qrmo)
 
