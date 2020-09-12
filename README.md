@@ -2,6 +2,8 @@
 
 [DEMO Video](https://youtu.be/Nl4VP78Qrmo)
 
+[Playable WebGL Demo](https://feather-chung.itch.io/unity-game-stats-with-gas)
+
 ## 介紹
 `Unity Game Stats With GAS` 是專為 Unity Engine 開發的小工具，結合 GAS(Google Apps Script)，用 Google 雲端試算表打造簡易的數據統計資料庫。
 
